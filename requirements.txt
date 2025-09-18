@@ -10,3 +10,8 @@ langchain-groq
 langchain-openai
 pypandoc
 pandoc
+serpapi
+beautifulsoup4
+requests
+pandas
+numpy
