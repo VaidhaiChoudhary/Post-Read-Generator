@@ -1,0 +1,12 @@
+langgraph
+langchain_community 
+langchain_core 
+tavily-python 
+python-dotenv
+IPython
+md2docx-python
+streamlit
+langchain-groq
+langchain-openai
+pypandoc
+pandoc
