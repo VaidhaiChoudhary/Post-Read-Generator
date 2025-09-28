@@ -1,4 +1,7 @@
 # Description: This file contains the implementation of the agents that will be used in the pipeline.
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from typing import List
 from langchain_core.messages import HumanMessage, SystemMessage
 from prompts import query_template, report_prompt
