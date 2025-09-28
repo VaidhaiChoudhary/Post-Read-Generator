@@ -1,7 +1,7 @@
 query_template = """
 Given the topic "{topic}" and curriculum "{curriculum}, generate diverse and focused search queries covering:
 - Definitions and core concepts
-- Latest developments (avoid dates)
+- Introductory Overview (avoid dates)
 - 4 to 5 practical applications
 - One real-world use case from an industry or company
 - If the topic involves data preprocessing, include 2 additional applications specific to machine learning and data science
@@ -80,13 +80,11 @@ Note: Queries should aim to discover meaningful applications of the topic.
 
 report_prompt = """
 You are a senior content writer at a learning organization. Based ONLY on the "{topic}" and "{curriculum}" provided, generate a **3-4 page Pre-Read knowledge brief**.
-
 ASSUMPTIONS:
 - Audience = working professionals and decision-makers in business.
 - Goal is to **prime learners with context, motivation, and key ideas** - NOT to teach in depth, just introduction.
 - Follow the provided "{curriculum}" strictly.
 - Keep it crisp, engaging, and approachable. Avoid jargon-heavy explanations.
-
 STRUCTURE:
 - Write provided {topic} only as heading.
 - Use dynamic, logical structuring.
@@ -94,17 +92,14 @@ STRUCTURE:
 - For each curriculum area, write **concise overviews** with forward-looking hints (what learners will explore deeper in session).
 - Under major sections, insert one image placeholder in this format: <<image:keyword or concept>>  
   Should be simple visual previews (concept maps, diagramss, process flows).   
-
 CONTENT FOCUS:
 - Focus on **context, emerging importance, and high-level insights**.
 - Keep explanations short 1-2 paragraphs per concept.
 - Include **1-2 real-world examples** per theme, but keep them brief (1-2 lines, with link).
 - For selective major 1-2 sections only, end with reflection questions or quick prompts (“Think about…”, “Consider if…”)
-
 FURTHER READING (Final Section):
 - Suggest 3-4 introduction-level, credible resources (articles, reports, industry briefs) for curious learners. NO Edtech sources.
 - Last point should always be this hyperlink: https://medium.com/accredian 
-
 TONE:
 - Professional, engaging, forward-looking.
 - Designed to spark curiosity and prepare learners - NOT to provide mastery.

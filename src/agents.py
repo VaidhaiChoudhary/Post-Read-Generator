@@ -16,7 +16,7 @@ import streamlit as st
 import asyncio
 from langchain_openai import ChatOpenAI
 import pypandoc
-# pypandoc.download_pandoc()
+pypandoc.download_pandoc()
 #from utils import replace_image_placeholders
 from src.utils import replace_image_placeholders
 
