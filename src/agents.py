@@ -14,7 +14,8 @@ import asyncio
 from langchain_openai import ChatOpenAI
 import pypandoc
 # pypandoc.download_pandoc()
-from utils import replace_image_placeholders
+#from utils import replace_image_placeholders
+from src.utils import replace_image_placeholders
 
 # Query geneartive agent with curriculum
 def generate_queries(topic: str, curriculum: str = "") -> dict:

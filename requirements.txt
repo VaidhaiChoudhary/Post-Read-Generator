@@ -11,6 +11,7 @@ langchain-openai
 pypandoc
 pandoc
 serpapi
+google-search-results
 beautifulsoup4
 requests
 pandas
