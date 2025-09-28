@@ -1,7 +1,7 @@
 query_template = """
 Given the topic "{topic}" and curriculum "{curriculum}, generate diverse and focused search queries covering:
 - Definitions and core concepts
-- Introductory Overview (avoid dates)
+- Latest developments (avoid dates)
 - 4 to 5 practical applications
 - One real-world use case from an industry or company
 - If the topic involves data preprocessing, include 2 additional applications specific to machine learning and data science
@@ -9,24 +9,6 @@ Given the topic "{topic}" and curriculum "{curriculum}, generate diverse and foc
 Note: Queries should aim to discover meaningful applications of the topic.
 """
 
-# report_prompt = """
-# You are a senior instructional content writer at an edtech company. Based on the given topic, generate a high-quality, post-class learning document aimed at working professionals of 5 to 6 page
-# - DO NOT include the topic as a heading at the top
-# - DO NOT include any heading titled "Conclusion" or similar phrases "this report" that signal an ending
-# - Structure the content dynamically - include section headings only if they improve readability. Do not follow a fixed sequence like Introduction, Applications, Questions, etc.
-# - Provide **fresh insights, recent developments, strategic considerations, and real-world applications** relevant to the topic - especially useful for business or industry professionals.
-# - When appropriate, mention **external tools, papers, or frameworks with HYPERLINKS**. Only use **credible, neutral sources** such as research papers, official documentation, GitHub repos, company whitepapers, or news from leading journals (like Nature, IEEE, MIT Tech Review). Avoid all edtech platforms.
-# - Write in **clear bullet points with nested subpoints**
-# - Use **bold formatting** for key technical or strategic terms to enhance scanability.
-# - Avoid academic or textbook-style tone - explain technical concepts with **business-level clarity** and industry relevance.
-# - The final content should feel like a **strategic, forward-looking industry brief**, helping professionals think critically or act on the topic
-# - If required add some real company cases about the topic.
-# - Consider adding **reflection questions**, mini checklists, or guiding questions under major sections to encourage active thinking.
-# # Output should feel natural, polished, and context-aware - as if written for executives, product leaders, and strategists in a working environment
-# For major sections, include a placeholder like this under that section heading: <<image:keyword or concept>>  
-# Example: <<image:GAN architecture>>
-# Rules: - Do not add images with source name written on it. - The image prompt should reflect the section theme, add diagrams, flowcharts, implement, architecture, relevant tech - Write clearly, formally, and for a business audience. Do not generate images — just insert placeholders.
-# <"end-of-sequence"> """
 
 #### giving good result
 # report_prompt = """
@@ -50,59 +32,31 @@ Note: Queries should aim to discover meaningful applications of the topic.
 
 
 
-# report_prompt = """
-# You are a senior content writer at a learning organization. Based ONLY on the "{topic}" and "{curriculum}" provided, generate a **6-7 page post-session knowledge brief**.
-# ASSUMPTIONS:
-# - Reader already knows the basics. Do NOT repeat definitions, intros, or beginner-level content.
-# - Follow the provided "{curriculum}" strictly.
-# STRUCTURE:
-# - Do NOT include a topic heading or a “Conclusion” section.
-# - Use dynamic, logical structuring — apply section headings only where needed for clarity.
-# - Under each major section (except main title), insert one image placeholder in this format: <<image:keyword or concept>> 
-#   → Should reflect the section theme: diagrams, architecture, flowcharts, implementation visuals. 
-#   → **Do NOT use source labels or generate the image.**
-#   → Add a short caption under the image in **center alignment**.
-# CONTENT FOCUS:
-# - Go deep into provided topic's emerging developments, recent trends, innovations, industry applications, frameworks/tools, strategic insights, and real challenges. as per requirement in Topic
-# - Use **clear, long paragraphs** with subpoints and good structure. Bold key terms.
-# - For select major sections, add ONE of the following: short checklist, guiding questions, or 2-3 reflection questions — to promote active thinking in their domain. (no image in this)
-# USE CASES & SOURCING:
-# - Include real-world use cases from companies with source links.
-# - Highlight tools, frameworks, or papers with **Relevant Example** and a proper **Source LINK**.
-# - Use ONLY credible sources (no edtech): research papers, whitepapers, official docs, GitHub, IEEE, MIT Tech Review, etc.
-# FURTHER LEARNING (Final Section):
-# - Add 3-5 advanced, practical resources HYPERLINK (not basic/introductory).
-# - NO edtech links.
-# - FINAL POINT should always be this hyperlink: https://medium.com/accredian 
-# TONE: - Natural, professional, actionable. - Written for working professionals, strategists, decision-makers.
-# <"end-of-sequence">
-# """
-
 report_prompt = """
-You are a senior content writer at a learning organization. Based ONLY on the "{topic}" and "{curriculum}" provided, generate a **3-4 page Pre-Read knowledge brief**.
+You are a senior content writer at a learning organization. Based ONLY on the "{topic}" and "{curriculum}" provided, generate a **5-6 page post-session knowledge brief**.
 ASSUMPTIONS:
 - Audience = working professionals and decision-makers in business.
-- Goal is to **prime learners with context, motivation, and key ideas** - NOT to teach in depth, just introduction.
+- Reader already knows the basics. Do NOT repeat definitions, intros, or beginner-level content.
 - Follow the provided "{curriculum}" strictly.
-- Keep it crisp, engaging, and approachable. Avoid jargon-heavy explanations.
 STRUCTURE:
 - Write provided {topic} only as heading.
-- Use dynamic, logical structuring.
-- Use clear section headings based on curriculum to logically flow the narrative.
-- For each curriculum area, write **concise overviews** with forward-looking hints (what learners will explore deeper in session).
-- Under major sections, insert one image placeholder in this format: <<image:keyword or concept>>  
-  Should be simple visual previews (concept maps, diagramss, process flows).   
+- Use dynamic, logical structuring - apply section headings only where needed for clarity.
+- Under each major section (except main title), insert one image placeholder in this format: <<image:keyword or concept>> 
+  → Should reflect the section theme: diagrams, architecture, flowcharts, implementation visuals. 
+  → **Do NOT use source labels or generate the image.**
+  → Add a short caption under the image in **center alignment**.
 CONTENT FOCUS:
-- Focus on **context, emerging importance, and high-level insights**.
-- Keep explanations short 1-2 paragraphs per concept.
-- Include **1-2 real-world examples** per theme, but keep them brief (1-2 lines, with link).
-- For selective major 1-2 sections only, end with reflection questions or quick prompts (“Think about…”, “Consider if…”)
-FURTHER READING (Final Section):
-- Suggest 3-4 introduction-level, credible resources (articles, reports, industry briefs) for curious learners. NO Edtech sources.
-- Last point should always be this hyperlink: https://medium.com/accredian 
-TONE:
-- Professional, engaging, forward-looking.
-- Designed to spark curiosity and prepare learners - NOT to provide mastery.
+- Go deep into provided topic's emerging developments, recent trends, innovations, industry applications, frameworks/tools, strategic insights, and real challenges. as per requirement in Topic
+- Use **clear, long paragraphs** with subpoints and good structure. Bold key terms.
+- For select major sections, add ONE of the following: short checklist, guiding questions, or 2-3 reflection questions — to promote active thinking in their domain. (no image in this)
+USE CASES & SOURCING:
+- Include real-world use cases from companies with source links.
+- Highlight tools, frameworks, or papers with **Relevant Example** and a proper **Source LINK**.
+- Use ONLY credible sources (no edtech): research papers, whitepapers, official docs, GitHub, IEEE, MIT Tech Review, etc.
+FURTHER LEARNING (Final Section):
+- Add 3-5 advanced, practical resources HYPERLINK (not basic/introductory).
+- NO edtech links.
+- FINAL POINT should always be this hyperlink: https://medium.com/accredian 
+TONE: - Natural,professional,actionable. - Written for working professionals, strategists, decision-makers.
 <"end-of-sequence">
 """
-

@@ -111,7 +111,7 @@ workflow_graph = workflow.compile()
 # streamlit application
 
 # Set the title of the app
-st.title("Pre-Read Generator")
+st.title("Post-Read Generator")
 
 # Custom HTML and CSS for the About section in a square box
 
@@ -119,7 +119,7 @@ with st.sidebar.container():
     st.markdown("""
     <div style="padding: 10px; border: 2px solid #ccc; border-radius: 10px; background-color: #000000; color: #ffffff;">
         <h4>About</h4>
-        <p>The Pre-Read Report Generator Agent is a state-of-the-art AI-powered application designed to simplify and enhance 
+        <p>The Post-Read Report Generator Agent is a state-of-the-art AI-powered application designed to simplify and enhance 
         the process of generating comprehensive technical reports. Built on Streamlit, this intelligent tool leverages advanced
         AI models and APIs to structure detailed, high-quality reports effortlessly.</p>
     </div>
