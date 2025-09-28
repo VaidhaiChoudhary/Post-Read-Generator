@@ -157,10 +157,19 @@ import requests
 from serpapi import GoogleSearch
 from dotenv import load_dotenv
 
-load_dotenv()
-SERPAPI_KEY = os.getenv("SERPAPI_KEY")
+# load_dotenv()
+# SERPAPI_KEY = os.getenv("SERPAPI_KEY")
+
 
 def fetch_image_url(query): 
+    
+    ### # fetch dynamically
+    SERPAPI_KEY = os.getenv("SERPAPI_KEY")  
+    if not SERPAPI_KEY:
+        print("No SERPAPI_KEY found in environment")
+        return None
+    ####
+    
     def is_supported_and_relevant(url):
         url = url.lower()
         if not url.endswith((".jpg", ".jpeg", ".png")):

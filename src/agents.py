@@ -155,6 +155,7 @@ async def run_app(topic, curriculum):
 # Sidebar with API key input fields and a brief description
 st.sidebar.title("API Keys Configuration")
 # Sidebar for API key inputs
+api_key_serpapi = st.sidebar.text_input("SerpAPI API Key", type="password")
 api_key_1 = st.sidebar.text_input("Tavily API Key 1", type="password")
 api_key_2 = st.sidebar.text_input("Groq API Key 2", type="password")
 api_key_3 = st.sidebar.text_input("OpenAI API Key 3", type="password")
@@ -173,6 +174,7 @@ curriculum = st.text_area("Enter the curriculum", height=100)
 if st.button("Submit"):
 
     # Validate and set API keys only after clicking submit
+    os.environ["SERPAPI_KEY"] = api_key_serpapi
     os.environ["TAVILY_API_KEY"] = api_key_1
     os.environ["GROQ_API_KEY"] = api_key_2
     os.environ["OPENAI_API_KEY"] = api_key_3
