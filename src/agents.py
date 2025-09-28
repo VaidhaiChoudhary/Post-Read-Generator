@@ -15,8 +15,14 @@ from md2docx_python.src.md2docx_python import markdown_to_word
 import streamlit as st
 import asyncio
 from langchain_openai import ChatOpenAI
+import shutil  
 import pypandoc
-pypandoc.download_pandoc()
+# pypandoc.download_pandoc()
+
+# Only download pandoc if it's not already installed
+if not shutil.which("pandoc"):
+    pypandoc.download_pandoc()
+    
 #from utils import replace_image_placeholders
 from src.utils import replace_image_placeholders
 
