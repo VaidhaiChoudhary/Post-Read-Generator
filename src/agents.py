@@ -16,19 +16,24 @@ import streamlit as st
 import asyncio
 from langchain_openai import ChatOpenAI
 import shutil  
-# import pypandoc
+import pypandoc
 # # pypandoc.download_pandoc()
 
-# # Only download pandoc if it's not already installed
+## # Only download pandoc if it's not already installed
 # if not shutil.which("pandoc"):
 #     pypandoc.download_pandoc()
 
-import pypandoc
-# Only download Pandoc if running locally (Windows)
-if sys.platform.startswith("win"):
-    import shutil
-    if not shutil.which("pandoc"):
-        pypandoc.download_pandoc()
+## # Only download Pandoc if running locally (Windows)
+# if sys.platform.startswith("win"):
+#     import shutil
+#     if not shutil.which("pandoc"):
+#         pypandoc.download_pandoc()
+        
+# Force-set pandoc download location inside the project
+pandoc_dir = os.path.join(os.getcwd(), "pandoc-bin")
+if not shutil.which("pandoc"):
+    pypandoc.download_pandoc(targetfolder=pandoc_dir)
+    os.environ["PATH"] = pandoc_dir + os.pathsep + os.environ["PATH"]
 
     
 #from utils import replace_image_placeholders
