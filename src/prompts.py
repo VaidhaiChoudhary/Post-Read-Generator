@@ -1,7 +1,7 @@
 query_template = """
 Given the topic "{topic}" and curriculum "{curriculum}", generate diverse and focused search queries aimed at discovering **advanced, post-session knowledge**.  
 DO NOT include basic definitions or core concepts already covered in the main session. Focus on:
-- Emerging trends, innovations, strategic considerations or recent developments in the field
+- further enhanced topics, Emerging trends, innovations, strategic considerations or recent developments in the field
 - 4 to 5 practical applications in real-world business, technical, or industrial contexts
 - One detailed real-world use case from a company or organization
 Note: Queries should aim to uncover content that provides **further depth and actionable insights** for working professionals, decision-makers, or business leaders.

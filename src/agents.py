@@ -183,7 +183,7 @@ api_key_3 = st.sidebar.text_input("OpenAI API Key 3", type="password")
 model_option = st.sidebar.selectbox(
     "Select Model",
     #("ChatGroq LLaMA-70B", "OpenAI GPT-4o","gpt-4o-mini-2024-07-18", "gpt-4", "gpt-3.5-turbo")
-    ("Mixtral 8x7b", "Llama 3.3 70B", "OpenAI GPT-4o","gpt-4o-mini-2024-07-18", "gpt-4", "gpt-3.5-turbo")
+    ("Llama 3.3 70B", "OpenAI GPT-4o","gpt-4o-mini-2024-07-18", "gpt-4", "gpt-3.5-turbo")
 )
 # Main screen input field for topic and curriculum
 topic = st.text_input("Enter the topic")
@@ -209,9 +209,7 @@ if st.button("Submit"):
 
             # if model_option == "ChatGroq LLaMA-70B":
             #     llm = ChatGroq(model="deepseek-r1-distill-llama-70b", verbose=False)
-            if model_option == "Mixtral 8x7b":
-                llm = ChatGroq(model="mixtral-8x7b-32768", verbose=False)
-            elif model_option == "Llama 3.3 70B":
+            if model_option == "Llama 3.3 70B":
                 llm = ChatGroq(model="llama-3.3-70b-versatile", verbose=False)
             else:
                 llm = ChatOpenAI(
